@@ -1,10 +1,17 @@
 import React from 'react';
+import { MyContext } from './App'
 
 
 function File2() {
   return (
     <div>
-      <button>Change status</button>
+      <MyContext.Consumer>
+        {(context) => (
+          <React.Fragment>
+            <button onClick={context.changeStatus}>Change status</button>
+          </React.Fragment>
+        )}
+      </MyContext.Consumer>
     </div>
   );
 }
